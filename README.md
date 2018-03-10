@@ -120,3 +120,24 @@ matisser.jump()
 Another option to create inheritance is to use let obj = Object.Create(otherobject).
 obj.prototype will be assigned otherobject 
 
+```
+const Animal = {
+ init: function(name, species){
+  this.name = name;
+  this.species = species
+  this.toys = []
+  },
+  add_toy : function(toy){
+ this.toys.push(toy)
+ }
+}
+
+let fido = Object.create(Animal)
+fido.init('Fido', 'Dog')
+
+```
+## ``__proto__`` vs ``prototype``
+
+``__proto__`` lets you look up what is the object that this object is inheriting from.
+
+``prototype`` is only a property of all functions. When a function becomes a constructor it uses this property to set the prototype of the objects that are created from it
